@@ -7,4 +7,8 @@ Rails.application.routes.draw do
   post "/api/signup", to: "users#create"
   patch "/api/users/:id", to: "users#update"
   delete "/api/users/delete", to: "users#destroy"
+
+  #SESSIONS
+  post "/api/login", to: "sessions#create"
+  delete "/api/logout", to: "sessions#destroy"
 end

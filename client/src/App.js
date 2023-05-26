@@ -1,6 +1,5 @@
 import './App.css';
 import Home from './components/Home';
-import Login from './components/Login';
 import { useState, useEffect } from "react";
 
 function App() {
@@ -16,18 +15,9 @@ function App() {
     });
   }, []);
 
-  function logout() {
-    fetch("/api/logout", { method: "DELETE" }).then((r) => {
-      if (r.ok) {
-        setUser(null);
-      }
-    });
-  }
-
   return (
     <div className="App">
-      <Home />
-      {/* {user ? <Login /> : null} */}
+      <Home user={user} setUser={setUser} />
     </div>
   );
 }

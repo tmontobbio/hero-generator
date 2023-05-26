@@ -1,9 +1,9 @@
-import './Login.css';
+import './SignUp.css';
 
 import { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 
-export default function Login({ setUser }) {
+export default function SignUp({ user, setUser }) {
     const [errors, setErrors] = useState([]);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
