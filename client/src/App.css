@@ -1,0 +1,44 @@
+:root {
+  --primary: #22D2A0;
+  --secondary: #192824;
+  --background: #192824;
+  --green: #1FC11B;
+  --yellow: #FFD913;
+  --orange: #FF9C55;
+  --red: #FF5555;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'VT323', monospace;
+}
+
+body {
+  background-image: radial-gradient(var(--secondary) 30%, var(--background) 30%);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+  color: var(--primary);
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 44px;
+}
