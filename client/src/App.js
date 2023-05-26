@@ -1,5 +1,6 @@
 import './App.css';
-import Home from './components/Home';
+import Logo from './components/Logo';
+import FormWrapper from './components/FormWrapper';
 import { useState, useEffect } from "react";
 
 function App() {
@@ -15,9 +16,24 @@ function App() {
     });
   }, []);
 
+  function logout() {
+    fetch("/api/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setUser(null);
+        console.log("Successfully logged out")
+      } else {
+        console.log("Logout was unsuccessful")
+      }
+    });
+  }
+
   return (
     <div className="App">
-      <Home user={user} setUser={setUser} />
+      <div id="home">
+        <Logo />
+        {user ? null : <FormWrapper user={user} setUser={setUser} />}
+        <button id="btn" onClick={logout}>Log Out</button>
+      </div>
     </div>
   );
 }
