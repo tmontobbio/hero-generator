@@ -1,3 +1,7 @@
+.logo h2 {
+    color: var(--primary);
+}
+
 .logo {
     position: absolute;
     top: 30px;
@@ -11,6 +15,75 @@
         -15px -15px 0 -3px var(--background), -15px -15px var(--orange),
         -20px -20px 0 -3px var(--background), -20px -20px var(--red);
     animation: wave 3s ease infinite;
+}
+
+@media (max-width: 1440px) {
+
+    .logo h2 {
+        font-size: 14vw;
+    }
+
+    .logo {
+        position: unset;
+        animation: wave-mobile 3s ease infinite;
+        border: .75rem solid var(--primary);
+        box-shadow: -5px -5px 0 -.35rem var(--background), -15px -15px var(--green),
+            -10px -10px 0 -.1rem var(--background), -30px -30px var(--yellow),
+            -15px -15px 0 -.1rem var(--background), -45px -45px var(--orange),
+            -20px -20px 0 -.1rem var(--background), -60px -60px var(--red);
+    }
+
+    @keyframes wave-mobile {
+        0% {
+            border: .75rem solid var(--primary);
+            box-shadow: -5px -5px 0 -.35rem var(--background), -15px -15px var(--green),
+                -10px -10px 0 -.1rem var(--background), -30px -30px var(--yellow),
+                -15px -15px 0 -.1rem var(--background), -45px -45px var(--orange),
+                -20px -20px 0 -.1rem var(--background), -60px -60px var(--red);
+        }
+
+        20% {
+            border: .75rem solid var(--red);
+            box-shadow: -5px -5px 0 -.35rem var(--background), -15px -15px var(--primary),
+                -10px -10px 0 -.1rem var(--background), -30px -30px var(--green),
+                -15px -15px 0 -.1rem var(--background), -45px -45px var(--yellow),
+                -20px -20px 0 -.1rem var(--background), -60px -60px var(--orange);
+        }
+
+        40% {
+            border: .75rem solid var(--orange);
+            box-shadow: -5px -5px 0 -.35rem var(--background), -15px -15px var(--red),
+                -10px -10px 0 -.1rem var(--background), -30px -30px var(--primary),
+                -15px -15px 0 -.1rem var(--background), -45px -45px var(--green),
+                -20px -20px 0 -.1rem var(--background), -60px -60px var(--yellow);
+        }
+
+        60% {
+            border: .75rem solid var(--yellow);
+            box-shadow: -5px -5px 0 -.35rem var(--background), -15px -15px var(--orange),
+                -10px -10px 0 -.1rem var(--background), -30px -30px var(--red),
+                -15px -15px 0 -.1rem var(--background), -45px -45px var(--primary),
+                -20px -20px 0 -.1rem var(--background), -60px -60px var(--green);
+        }
+
+        80% {
+            border: .75rem solid var(--green);
+            box-shadow: -5px -5px 0 -.35rem var(--background), -15px -15px var(--yellow),
+                -10px -10px 0 -.1rem var(--background), -30px -30px var(--orange),
+                -15px -15px 0 -.1rem var(--background), -45px -45px var(--red),
+                -20px -20px 0 -.1rem var(--background), -60px -60px var(--primary);
+        }
+
+        100% {
+            border: .75rem solid var(--primary);
+            box-shadow: -5px -5px 0 -.35rem var(--background), -15px -15px var(--green),
+                -10px -10px 0 -.1rem var(--background), -30px -30px var(--yellow),
+                -15px -15px 0 -.1rem var(--background), -45px -45px var(--orange),
+                -20px -20px 0 -.1rem var(--background), -60px -60px var(--red);
+        }
+
+    }
+
 }
 
 @keyframes wave {

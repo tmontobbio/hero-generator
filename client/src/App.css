@@ -24,21 +24,3 @@ body::-webkit-scrollbar {
   margin: 0;
   padding: 0;
 }
-
-img {
-  max-width: 100%;
-}
-
-h1,
-h2 {
-  font-weight: bold;
-  color: var(--primary);
-}
-
-h1 {
-  font-size: 60px;
-}
-
-h2 {
-  font-size: 44px;
-}
