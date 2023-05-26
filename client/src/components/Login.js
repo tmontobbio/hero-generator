@@ -1,39 +1,33 @@
-import './SignUp.css';
+import './Login.css';
 import { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 
-export default function SignUp({ setUser, setFormToggle, toggle }) {
+export default function Login({ setUser, setFormToggle, toggle }) {
     const [errors, setErrors] = useState([]);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
-    function signUp(e) {
+    function logIn(e) {
         e.preventDefault();
-        fetch("/api/signup", {
+        fetch("/api/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                username: username.toLowerCase(),
-                password: password,
-                password_confirmation: passwordConfirmation,
-            }),
+            body: JSON.stringify({ username: username.toLowerCase(), password }),
         }).then((r) => {
             if (r.ok) {
                 r.json().then((data) => setUser(data));
+                console.log("Log in successful")
             } else {
-                r.json().then((r) => {
-                    setErrors(r.errors);
-                });
+                console.log("Log in Failed")
             }
         });
     }
 
     return (
-        <div id="sign-up">
-            <Form onSubmit={signUp}>
+        <div id="login">
+            <Form onSubmit={logIn}>
                 <Form.Field>
                     <input
                         className="form-field"
@@ -51,18 +45,9 @@ export default function SignUp({ setUser, setFormToggle, toggle }) {
                         type="password"
                     />
                 </Form.Field>
-                <Form.Field>
-                    <input
-                        className="form-field"
-                        placeholder="Confirm Password"
-                        value={passwordConfirmation}
-                        onChange={(e) => setPasswordConfirmation(e.target.value)}
-                        type="password"
-                    />
-                </Form.Field>
-                <Button type="submit">Submit</Button>
+                <Button type="submit">Log In</Button>
             </Form>
-            <button onClick={toggle}>Or...Log In</button>
+            <button onClick={toggle}>Or...Sign Up</button>
         </div>
     )
 }

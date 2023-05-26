@@ -1,0 +1,7 @@
+#form-wrapper {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: calc(50%);
+    left: calc(50%);
+}
