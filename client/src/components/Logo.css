@@ -4,12 +4,10 @@
 }
 
 .logo {
-    position: absolute;
-    top: 30px;
-    left: 30px;
+    grid-row: 1;
     width: fit-content;
     height: fit-content;
-    padding: 10px;
+    padding: 2ch 4ch 2ch 4ch;
     border: 3px solid var(--primary);
     box-shadow: -5px -5px 0 -3px var(--background), -5px -5px var(--green),
         -10px -10px 0 -3px var(--background), -10px -10px var(--yellow),
@@ -80,8 +78,6 @@
     }
 
     .logo {
-        margin-top: 8vh;
-        position: unset;
         animation: wave-mobile 3s ease infinite;
         border: .75rem solid var(--primary);
         box-shadow: -5px -5px 0 -.35rem var(--background), -15px -15px var(--green),

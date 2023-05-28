@@ -12,7 +12,23 @@ export default function FormWrapper({ user, setUser }) {
 
     return (
         <div id="form-wrapper">
-            {formToggle ? <Login toggle={toggle} formToggle={formToggle} setFormToggle={setFormToggle} setUser={setUser} /> : <SignUp toggle={toggle} formToggle={formToggle} setFormToggle={setFormToggle} setUser={setUser} />}
+            {
+                formToggle
+                    ?
+                    <Login
+                        toggle={toggle}
+                        formToggle={formToggle}
+                        setFormToggle={setFormToggle}
+                        setUser={setUser}
+                    />
+                    :
+                    <SignUp
+                        toggle={toggle}
+                        formToggle={formToggle}
+                        setFormToggle={setFormToggle}
+                        setUser={setUser}
+                    />
+            }
         </div>
     )
 }

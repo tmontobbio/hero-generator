@@ -2,7 +2,7 @@ import './SignUp.css';
 import { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 
-export default function SignUp({ setUser, setFormToggle, toggle }) {
+export default function SignUp({ setUser, toggle, formToggle }) {
     const [errors, setErrors] = useState([]);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -33,36 +33,35 @@ export default function SignUp({ setUser, setFormToggle, toggle }) {
 
     return (
         <div id="sign-up">
-            <Form onSubmit={signUp}>
-                <Form.Field>
-                    <input
-                        className="form-field"
-                        placeholder="Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </Form.Field>
-                <Form.Field>
-                    <input
-                        className="form-field"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        type="password"
-                    />
-                </Form.Field>
-                <Form.Field>
-                    <input
-                        className="form-field"
-                        placeholder="Confirm Password"
-                        value={passwordConfirmation}
-                        onChange={(e) => setPasswordConfirmation(e.target.value)}
-                        type="password"
-                    />
-                </Form.Field>
+            <form className="form" onSubmit={signUp}>
+                <input
+                    className="form-field"
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <br />
+                <input
+                    className="form-field"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="password"
+                />
+                <br />
+                <input
+                    className="form-field"
+                    placeholder="Confirm Password"
+                    value={passwordConfirmation}
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                    type="password"
+                />
+                <br />
                 <Button type="submit">Submit</Button>
-            </Form>
-            <button onClick={toggle}>Or...Log In</button>
+            </form>
+            <button className='toggle-btn' onClick={toggle}>
+                Log-in
+            </button>
         </div>
     )
 }

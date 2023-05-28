@@ -1,8 +1,8 @@
 import './Login.css';
 import { useState } from "react";
-import { Button, Form } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 
-export default function Login({ setUser, setFormToggle, toggle }) {
+export default function Login({ setUser, toggle, formToggle }) {
     const [errors, setErrors] = useState([]);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -27,27 +27,23 @@ export default function Login({ setUser, setFormToggle, toggle }) {
 
     return (
         <div id="login">
-            <Form onSubmit={logIn}>
-                <Form.Field>
-                    <input
-                        className="form-field"
-                        placeholder="Username"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
-                </Form.Field>
-                <Form.Field>
-                    <input
-                        className="form-field"
-                        placeholder="Password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        type="password"
-                    />
-                </Form.Field>
-                <Button type="submit">Log In</Button>
-            </Form>
-            <button onClick={toggle}>Or...Sign Up</button>
+            <form className="form" onSubmit={logIn}>
+                <input
+                    placeholder="Username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <br />
+                <input
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="password"
+                />
+                <br />
+                <Button type="submit">Enter</Button>
+            </form>
+            <button className='toggle-btn' onClick={toggle}>Sign up!</button>
         </div>
     )
 }

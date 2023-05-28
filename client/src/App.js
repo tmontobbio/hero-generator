@@ -31,8 +31,8 @@ function App() {
     <div className="App">
       <div id="home">
         <Logo />
-        {user ? null : <FormWrapper user={user} setUser={setUser} />}
-        <button id="btn" onClick={logout}>Log Out</button>
+        {!user && <FormWrapper user={user} setUser={setUser} />}
+        {user && <button id="log-out" onClick={logout}>Log Out</button>}
       </div>
     </div>
   );
