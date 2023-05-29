@@ -35,9 +35,31 @@ button {
   height: fit-content;
 }
 
+input {
+  height: fit-content;
+  font-size: 8ch;
+  padding-left: .5ch;
+  border-radius: .3ch;
+  border: .2ch solid rgba(0, 0, 0, 0.59);
+  margin: .15ch 0 .15ch 0;
+  background-color: rgb(172, 172, 172);
+}
+
+input,
+select,
+textarea {
+  color: var(--primary);
+}
+
+textarea:focus,
+input:focus {
+  color: var(--primary);
+}
+
 #home {
   width: 100vw;
   min-height: 100vh;
+  overflow-y: auto;
   display: grid;
   grid-template-rows: min-content auto min-content;
   padding-bottom: 3vh;

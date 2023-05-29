@@ -36,6 +36,7 @@ export default function Login({ setUser, toggle, formToggle }) {
                 <br />
                 <input
                     placeholder="Password"
+                    className={[...password].length >= 8 || [...password].length == 0 ? "form-field" : "form-field-red"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"

@@ -7,26 +7,6 @@
     margin: auto;
 }
 
-input {
-    height: fit-content;
-    font-size: 8ch;
-    border-radius: .3ch;
-    border: .2ch solid rgba(0, 0, 0, 0.59);
-    margin: .15ch 0 .15ch 0;
-    background-color: rgb(172, 172, 172);
-}
-
-input,
-select,
-textarea {
-    color: var(--primary);
-}
-
-textarea:focus,
-input:focus {
-    color: var(--primary);
-}
-
 .form {
     width: 100%;
     height: 100%;
