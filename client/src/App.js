@@ -1,6 +1,7 @@
 import './App.css';
 import Logo from './components/Logo';
 import FormWrapper from './components/FormWrapper';
+import Generator from './components/Generator';
 import { useState, useEffect } from "react";
 
 function App() {
@@ -10,20 +11,13 @@ function App() {
     fetch("/api/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
-      } else {
-        console.log("no user logged in")
       }
     });
   }, []);
 
   function logout() {
     fetch("/api/logout", { method: "DELETE" }).then((r) => {
-      if (r.ok) {
-        setUser(null);
-        console.log("Successfully logged out")
-      } else {
-        console.log("Logout was unsuccessful")
-      }
+      setUser(null);
     });
   }
 
@@ -32,6 +26,7 @@ function App() {
       <div id="home">
         <Logo />
         {!user && <FormWrapper user={user} setUser={setUser} />}
+        <Generator />
         {user && <button id="log-out" onClick={logout}>Log Out</button>}
       </div>
     </div>

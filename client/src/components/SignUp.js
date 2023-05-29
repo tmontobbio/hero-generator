@@ -42,7 +42,7 @@ export default function SignUp({ setUser, toggle, formToggle }) {
         <div id="sign-up">
             <form className="form" onSubmit={signUp}>
                 <input
-                    className="form-field"
+                    className={[...username].length >= 3 || [...username].length == 0 ? "form-field" : "form-field-red"}
                     placeholder="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
@@ -57,14 +57,20 @@ export default function SignUp({ setUser, toggle, formToggle }) {
                 />
                 <br />
                 <input
-                    className={password.toString() == passwordConfirmation.toString() || [...password].length == 0 ? "form-field" : "form-field-red"}
+                    className={(password.toString() == passwordConfirmation.toString() && [...password].length > 7) || [...password].length == 0 ? "form-field" : "form-field-red"}
                     placeholder="Confirm Password"
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                     type="password"
                 />
                 <br />
-                <button type="submit" className={password.toString() != passwordConfirmation.toString() || [...password].length == 0 ? "button-disabled" : "button-enabled"}>Submit</button>
+                <button type="submit" className={
+                    password.toString() == passwordConfirmation.toString()
+                        &&
+                        [...password].length > 7
+                        &&
+                        [...username].length > 2
+                        ? "button-enabled" : "button-disabled"}>Submit</button>
             </form>
             <button className='toggle-btn' onClick={toggle}>
                 Log-in

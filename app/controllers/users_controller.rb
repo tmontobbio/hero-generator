@@ -9,11 +9,11 @@ class UsersController < ApplicationController
     if user
       render json: user, status: :accepted
     else
-      render json: { error: "Not logged in" }, status: :unauthorized
+      render json: { error: "No user is logged in." }, status: :unauthorized
     end
   end
 
-  def create
+  def create 
     new_user = User.create!(user_params)
     session[:user_id] = new_user.id
     render json: new_user, status: :created
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
   private
 
-  def invalid_record(e)
+  def invalid_record e
     render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
   end
 

@@ -1,0 +1,11 @@
+#generator {
+    grid-row: 2;
+}
+
+#generator img {
+    margin: 10ch auto 10ch auto;
+}
+
+#generator img {
+    scale: calc(100vw);
+}
