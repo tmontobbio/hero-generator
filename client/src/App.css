@@ -88,6 +88,15 @@ input:focus {
 
 
 @media (max-width: 1440px) {
+
+  input {
+    font-size: 9vh !important;
+  }
+
+  button {
+    font-size: 7vh;
+  }
+
   #home {
     padding-top: 5rem;
   }
