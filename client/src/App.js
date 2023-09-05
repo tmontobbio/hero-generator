@@ -1,7 +1,8 @@
 import './App.css';
-import Logo from './Logo';
-import FormWrapper from './form/FormWrapper';
-import Generator from './Generator';
+import Logo from './components/logo/Logo';
+import Form from './components/navigation/form/Form';
+import Generator from './components/generator/Generator';
+import Nav from './components/navigation/Nav';
 import { Button } from 'semantic-ui-react';
 import { useState, useEffect } from "react";
 
@@ -24,9 +25,11 @@ function App() {
 
   return (
     <div className="App">
-      <div id="home">
+      <div id='nav-wrapper'>
+        <Nav user={user} setUser={setUser} />
+      </div>
+      <div id='main'>
         <Logo />
-        {!user && <FormWrapper user={user} setUser={setUser} />}
         <Generator />
         {user && <Button id="log-out" onClick={logout}>Log Out</Button>}
       </div>

@@ -70,11 +70,13 @@ export default function SignUp({ setUser, toggle, formToggle }) {
                         [...password].length > 7
                         &&
                         [...username].length > 2
-                        ? "button-enabled" : "button-disabled"}>Submit</button>
+                        ? "button-enabled" : "button-disabled"}>
+                    Submit
+                </button>
+                <button className='toggle-btn' onClick={toggle}>
+                    Log-in
+                </button>
             </form>
-            <button className='toggle-btn' onClick={toggle}>
-                Log-in
-            </button>
         </div>
     )
 }

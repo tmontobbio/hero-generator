@@ -1,7 +1,7 @@
-import "./FormWrapper.css"
+import "./Form.css"
 import { useState } from "react";
-import SignUp from "./SignUp.js"
-import Login from "./Login.js"
+import SignUp from "./options/SignUp.js"
+import Login from "./options/Login.js"
 
 export default function FormWrapper({ user, setUser }) {
     const [formToggle, setFormToggle] = useState(true)
@@ -11,7 +11,7 @@ export default function FormWrapper({ user, setUser }) {
     }
 
     return (
-        <div id="form-wrapper">
+        <div id="form">
             {
                 formToggle
                     ?

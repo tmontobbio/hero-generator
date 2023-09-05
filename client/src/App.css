@@ -16,7 +16,7 @@
 }
 
 body {
-  background: rgb(15, 15, 15);
+  background: rgb(53, 53, 53);
   animation: fadeIn 3s ease;
 }
 
@@ -55,9 +55,16 @@ input:focus {
   color: var(--primary);
 }
 
-#home {
+.App {
   width: 100vw;
   min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+#main {
+  width: 100%;
+  min-height: 100%;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -65,14 +72,9 @@ input:focus {
   padding-bottom: 2.5rem;
 }
 
-#home form,
-#home button {
+#main form,
+#main button {
   animation: fadeIn 1s ease;
-}
-
-#log-out {
-  font-size: 10ch;
-  grid-row: 3;
 }
 
 @keyframes fadeIn {
@@ -96,7 +98,7 @@ input:focus {
     font-size: 7vh;
   }
 
-  #home {
+  #main {
     padding-top: 5rem;
   }
 }

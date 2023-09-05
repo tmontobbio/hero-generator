@@ -42,9 +42,13 @@ export default function Login({ setUser, toggle, formToggle }) {
                     type="password"
                 />
                 <br />
-                <Button type="submit">Enter</Button>
+                <button type="submit">
+                    Enter
+                </button>
+                <button className='toggle-btn' onClick={toggle}>
+                    Sign up!
+                </button>
             </form>
-            <button className='toggle-btn' onClick={toggle}>Sign up!</button>
         </div>
     )
 }
