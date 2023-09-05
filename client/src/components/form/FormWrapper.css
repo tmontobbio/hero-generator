@@ -7,6 +7,16 @@
     margin: auto;
 }
 
+form Button {
+    margin-top: 2rem;
+}
+
 .toggle-btn {
     margin-top: 2ch;
+}
+
+@media (max-width: 1440px) {
+    input {
+        width: 90vw;
+    }
 }

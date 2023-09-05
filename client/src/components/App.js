@@ -1,7 +1,8 @@
 import './App.css';
-import Logo from './components/Logo';
-import FormWrapper from './components/FormWrapper';
-import Generator from './components/Generator';
+import Logo from './Logo';
+import FormWrapper from './form/FormWrapper';
+import Generator from './Generator';
+import { Button } from 'semantic-ui-react';
 import { useState, useEffect } from "react";
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
         <Logo />
         {!user && <FormWrapper user={user} setUser={setUser} />}
         <Generator />
-        {user && <button id="log-out" onClick={logout}>Log Out</button>}
+        {user && <Button id="log-out" onClick={logout}>Log Out</Button>}
       </div>
     </div>
   );
