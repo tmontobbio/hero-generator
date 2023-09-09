@@ -1,4 +1,4 @@
-import './Nav.css';
+import './Nav.module.css';
 
 import Form from './form/Form';
 

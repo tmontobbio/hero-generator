@@ -1,4 +1,4 @@
-import './Logo.css';
+import './Logo.module.css';
 import React from 'react';
 
 export default function Logo() {

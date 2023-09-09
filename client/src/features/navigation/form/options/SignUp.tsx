@@ -1,4 +1,4 @@
-import './SignUp.css';
+import './SignUp.module.css';
 import { useState } from "react";
 
 export default function SignUp({ setUser, toggle }) {

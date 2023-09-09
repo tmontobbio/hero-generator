@@ -1,4 +1,4 @@
-import "./Generator.css"
+import "./Generator.module.css"
 import React from "react"
 
 export default function Generator() {
