@@ -1,5 +1,6 @@
 import './Nav.css';
-import Form from './form/Form.js'
+
+import Form from './form/Form';
 
 export default function Nav({ user, setUser }) {
 

@@ -1,7 +1,9 @@
+import React from 'react';
 import "./Form.css"
 import { useState } from "react";
-import SignUp from "./options/SignUp.js"
-import Login from "./options/Login.js"
+
+import SignUp from "./options/SignUp"
+import Login from "./options/Login"
 
 export default function FormWrapper({ user, setUser }) {
     const [formToggle, setFormToggle] = useState(true)
@@ -17,15 +19,11 @@ export default function FormWrapper({ user, setUser }) {
                     ?
                     <Login
                         toggle={toggle}
-                        formToggle={formToggle}
-                        setFormToggle={setFormToggle}
                         setUser={setUser}
                     />
                     :
                     <SignUp
                         toggle={toggle}
-                        formToggle={formToggle}
-                        setFormToggle={setFormToggle}
                         setUser={setUser}
                     />
             }

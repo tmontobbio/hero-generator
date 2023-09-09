@@ -1,9 +1,8 @@
+import React from 'react';
 import './Login.css';
 import { useState } from "react";
-import { Button } from "semantic-ui-react";
 
-export default function Login({ setUser, toggle, formToggle }) {
-    const [errors, setErrors] = useState([]);
+export default function Login({ setUser, toggle }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
@@ -36,7 +35,7 @@ export default function Login({ setUser, toggle, formToggle }) {
                 <br />
                 <input
                     placeholder="Password"
-                    className={[...password].length >= 8 || [...password].length == 0 ? "form-field" : "form-field-red"}
+                    className={[...password].length >= 8 || [...password].length === 0 ? "form-field" : "form-field-red"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     type="password"

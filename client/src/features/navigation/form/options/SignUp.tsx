@@ -1,14 +1,10 @@
 import './SignUp.css';
 import { useState } from "react";
-import { Button, Form } from "semantic-ui-react";
 
-export default function SignUp({ setUser, toggle, formToggle }) {
-    const [errors, setErrors] = useState([]);
+export default function SignUp({ setUser, toggle }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
-    const [passwordValid, setPasswordValid] = useState();
-    const [cPasswordValid, setCPasswordValid] = useState();
 
     function signUp(e) {
         e.preventDefault();
@@ -29,7 +25,7 @@ export default function SignUp({ setUser, toggle, formToggle }) {
                     r.json().then((data) => setUser(data));
                 } else {
                     r.json().then((r) => {
-                        setErrors(r.errors);
+                        console.log(r.errors);
                     });
                 }
             });
@@ -42,14 +38,14 @@ export default function SignUp({ setUser, toggle, formToggle }) {
         <div id="sign-up">
             <form className="form" onSubmit={signUp}>
                 <input
-                    className={[...username].length >= 3 || [...username].length == 0 ? "form-field" : "form-field-red"}
+                    className={[...username].length >= 3 || [...username].length === 0 ? "form-field" : "form-field-red"}
                     placeholder="Username"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
                 <br />
                 <input
-                    className={[...password].length >= 8 || [...password].length == 0 ? "form-field" : "form-field-red"}
+                    className={[...password].length >= 8 || [...password].length === 0 ? "form-field" : "form-field-red"}
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
@@ -57,7 +53,7 @@ export default function SignUp({ setUser, toggle, formToggle }) {
                 />
                 <br />
                 <input
-                    className={(password.toString() == passwordConfirmation.toString() && [...password].length > 7) || [...password].length == 0 ? "form-field" : "form-field-red"}
+                    className={(password.toString() == passwordConfirmation.toString() && [...password].length > 7) || [...password].length === 0 ? "form-field" : "form-field-red"}
                     placeholder="Confirm Password"
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
@@ -65,7 +61,7 @@ export default function SignUp({ setUser, toggle, formToggle }) {
                 />
                 <br />
                 <button type="submit" className={
-                    password.toString() == passwordConfirmation.toString()
+                    password.toString() === passwordConfirmation.toString()
                         &&
                         [...password].length > 7
                         &&
