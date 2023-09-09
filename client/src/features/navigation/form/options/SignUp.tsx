@@ -9,7 +9,7 @@ export default function SignUp({ setUser, toggle }) {
     function signUp(e) {
         e.preventDefault();
 
-        if (password.toString() == passwordConfirmation.toString()) {
+        if (password.toString() === passwordConfirmation.toString()) {
             fetch("/api/signup", {
                 method: "POST",
                 headers: {
@@ -53,7 +53,7 @@ export default function SignUp({ setUser, toggle }) {
                 />
                 <br />
                 <input
-                    className={(password.toString() == passwordConfirmation.toString() && [...password].length > 7) || [...password].length === 0 ? "form-field" : "form-field-red"}
+                    className={(password.toString() === passwordConfirmation.toString() && [...password].length > 7) || [...password].length === 0 ? "form-field" : "form-field-red"}
                     placeholder="Confirm Password"
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}

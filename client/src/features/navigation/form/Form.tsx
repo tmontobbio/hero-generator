@@ -5,7 +5,7 @@ import { useState } from "react";
 import SignUp from "./options/SignUp"
 import Login from "./options/Login"
 
-export default function FormWrapper({ user, setUser }) {
+export default function FormWrapper({ setUser }) {
     const [formToggle, setFormToggle] = useState(true)
 
     function toggle() {
